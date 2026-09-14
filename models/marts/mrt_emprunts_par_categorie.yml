@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: mrt_emprunts_par_categorie
+    columns:
+      - name: categorie
+        tests:
+          - not_null
+
+      - name: taux_retard_pct
+        tests:
+          - not_null

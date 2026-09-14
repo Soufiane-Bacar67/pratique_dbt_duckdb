@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_emprunts
+    columns:
+      - name: emprunt_id
+        tests:
+          - unique
+          - not_null
+
+      - name: membre_id
+        tests:
+          - not_null
+
+      - name: statut
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['rendu', 'rendu_en_retard', 'en_cours', 'perdu']
+
+      - name: date_emprunt
+        tests:
+          - not_null
